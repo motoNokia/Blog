@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Configuration status="off" monitorInterval="1800">
+
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d %-5level %F:%L %C:%M >> %msg%n"/>
+        </Console>
+        <File name="File" fileName="../logs/ssm.log">
+            <PatternLayout pattern="%d %-5level %F:%L %C:%M >> %msg%n"/>
+        </File>
+    </Appenders>
+
+    <Loggers>
+        <!-- Loggers -->
+        <logger name="org.springframework.core" level="INFO"/>
+        <logger name="org.springframework.beans" level="INFO"/>
+        <logger name="org.springframework.context" level="INFO"/>
+        <logger name="org.springframework.web" level="INFO"/>
+        <root level="INFO" includeLocation="true">
+            <appender-ref ref="Console" />
+            <appender-ref ref="File"/>
+        </root>
+    </Loggers>
+</Configuration>

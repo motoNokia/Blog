@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ly.dao.UserDao">
+    <resultMap id="userResultMap" type="User">
+        <id property="userId" column="user_id"/>
+        <result property="userName" column="user_name"/>
+        <result property="password" column="password"/>
+        <result property="headImg" column="head_img"/>
+    </resultMap>
+    <select id="getUserAll" resultMap="userResultMap">
+        SELECT user_id, user_name,password,head_img FROM blog_user;
+    </select>
+</mapper>
